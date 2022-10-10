@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-g*dlmuf#a&scqt*8n^zf-k)0#3=(2&%j*c&$=uwr9b-&e!ft%*
 DEBUG = True
 
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['34.105.207.60']
 
 
 # Application definition
@@ -72,14 +72,23 @@ TEMPLATES = [
 WSGI_APPLICATION = 'weacherdetector.wsgi.application'
 
 
+
+
+
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
+'''DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
+}'''
+DATABASES = {
+    'default':'django.db.backends.postgresql_psycopg2',
+    'NAME':'mydb',
+    'USER':'ttornike1991',
+    'PASSWORD':'Arturia1991*',
 }
 
 
@@ -116,8 +125,9 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
-
+import os
 STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR,'static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
